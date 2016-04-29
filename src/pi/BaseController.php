@@ -3,6 +3,8 @@
 namespace pi;
 
 
+use Psr\Log\LoggerInterface;
+
 class BaseController {
 
 	/**
