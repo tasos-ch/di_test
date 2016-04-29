@@ -17,5 +17,8 @@
     "psr-4": {
       "pi\\": "src/"
     }
+  },
+  "require": {
+    "symfony/dependency-injection": "^3.0"
   }
 }
