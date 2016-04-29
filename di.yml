@@ -1,0 +1,9 @@
+parameters:
+  root_path: '../log'
+services:
+  db_connection:
+    class: pi\DatabaseConnection
+  logger:
+    class: Monolog\Logger
+    factory: [pi\LoggerFactory, newMainLogger]
+    arguments: ['%root_path%/main.log']
