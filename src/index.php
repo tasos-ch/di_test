@@ -2,6 +2,7 @@
 
 use pi\ControllerA;
 use pi\ControllerB;
+use pi\DatabaseConnectionInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,7 +15,7 @@ $dic = new ContainerBuilder();
 $diConfLoader = new YamlFileLoader($dic, new FileLocator('../'));
 $diConfLoader->load('di.yml');
 
-/** @var \pi\DatabaseConnectionInterface $dbConnection */
+/** @var DatabaseConnectionInterface $dbConnection */
 $dbConnection = $dic->get('db_connection');
 /** @var LoggerInterface $logger */
 $logger = $dic->get('logger');
