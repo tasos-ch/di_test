@@ -2,8 +2,6 @@
 
 use pi\ControllerA;
 use pi\ControllerB;
-use pi\DatabaseConnectionInterface;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -15,10 +13,9 @@ $dic = new ContainerBuilder();
 $diConfLoader = new YamlFileLoader($dic, new FileLocator('../'));
 $diConfLoader->load('di.yml');
 
-/** @var DatabaseConnectionInterface $dbConnection */
-$dbConnection = $dic->get('db_connection');
-/** @var LoggerInterface $logger */
-$logger = $dic->get('logger');
 
-$a = new ControllerA($dbConnection, $logger);
-$b = new ControllerB($dbConnection);
+/** @var \pi\ControllerAggregateServiceInterface $aggregateService */
+$aggregateService = $dic->get('controller_aggregate');
+
+$a = new ControllerA($aggregateService);
+$b = new ControllerB($aggregateService);
