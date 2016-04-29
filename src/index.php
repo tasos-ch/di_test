@@ -21,4 +21,4 @@ $dbConnection = $dic->get('db_connection');
 $logger = $dic->get('logger');
 
 $a = new ControllerA($dbConnection, $logger);
-$b = new ControllerB($dbConnection);
+$b = new ControllerB($dbConnection, $logger);
