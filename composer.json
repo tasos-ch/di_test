@@ -15,10 +15,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "pi\\": "src/"
+      "pi\\": "src/pi/"
     }
   },
   "require": {
-    "symfony/dependency-injection": "^3.0"
+    "symfony/config": "^3.0",
+    "symfony/dependency-injection": "^3.0",
+    "symfony/yaml": "^3.0",
+    "monolog/monolog": "^1.19"
   }
 }
