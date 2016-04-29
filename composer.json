@@ -1,0 +1,21 @@
+{
+  "name": "tasos_ch/di_test",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tasos Chalkias",
+      "email": "imtasos@gmail.com"
+    },
+    {
+      "name": "Ioannis Papikas",
+      "email": "papikas.ioan@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "pi\\": "src/"
+    }
+  }
+}
