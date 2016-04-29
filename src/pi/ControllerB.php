@@ -10,6 +10,6 @@ class ControllerB extends BaseController {
 	 * @inheritdoc
 	 */
 	public function __construct(DatabaseConnectionInterface $dbConnection) {
-		parent::__construct($dbConnection, $logger);
+		parent::__construct($dbConnection);
 	}
 }

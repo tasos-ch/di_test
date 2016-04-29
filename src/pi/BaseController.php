@@ -20,10 +20,16 @@ class BaseController {
 	/**
 	 * BaseController constructor.
 	 * @param DatabaseConnectionInterface $dbConnection
+	 */
+	public function __construct(DatabaseConnectionInterface $dbConnection) {
+		$this->dbConnection = $dbConnection;
+
+	}
+
+	/**
 	 * @param LoggerInterface $logger
 	 */
-	public function __construct(DatabaseConnectionInterface $dbConnection, LoggerInterface $logger) {
-		$this->dbConnection = $dbConnection;
+	public function setLogger($logger) {
 		$this->logger = $logger;
 	}
 }
