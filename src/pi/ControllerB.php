@@ -9,7 +9,7 @@ class ControllerB extends BaseController {
 	 * ControllerB constructor.
 	 * @inheritdoc
 	 */
-	public function __construct(DatabaseConnectionInterface $dbConnection) {
-		parent::__construct($dbConnection, $logger);
+	public function __construct(ControllerAggregateServiceInterface $aggregateService) {
+		parent::__construct($aggregateService);
 	}
 }

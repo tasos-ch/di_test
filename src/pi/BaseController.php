@@ -19,11 +19,10 @@ class BaseController {
 
 	/**
 	 * BaseController constructor.
-	 * @param DatabaseConnectionInterface $dbConnection
-	 * @param LoggerInterface $logger
+	 * @param ControllerAggregateServiceInterface $aggregateService
 	 */
-	public function __construct(DatabaseConnectionInterface $dbConnection, LoggerInterface $logger) {
-		$this->dbConnection = $dbConnection;
-		$this->logger = $logger;
+	public function __construct(ControllerAggregateServiceInterface $aggregateService) {
+		$this->dbConnection = $aggregateService->getDatabaseConnection();
+		$this->logger = $aggregateService->getLogger();
 	}
 }
