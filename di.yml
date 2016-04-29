@@ -7,3 +7,6 @@ services:
     class: Monolog\Logger
     factory: [pi\LoggerFactory, newMainLogger]
     arguments: ['%root_path%/main.log']
+  controller_aggregate:
+    class: pi\ControllerAggregateService
+    arguments: ['@db_connection', '@logger']
