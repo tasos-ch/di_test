@@ -23,6 +23,7 @@ class ControllerA extends BaseController {
 
 	public function index() {
 		// Do stuff...
-		$classC = new ClassC($this->newInterface);
+		/** @var ClassC $classC */
+		$classC = $this->dic->get('class_c');
 	}
 }
