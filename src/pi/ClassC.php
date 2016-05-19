@@ -17,4 +17,8 @@ class ClassC {
 	public function __construct(NewInterface $newInterface) {
 		$this->newInterface = $newInterface;
 	}
+
+	public function run() {
+		$this->newInterface->doSomething();
+	}
 }
