@@ -4,25 +4,21 @@ namespace pi;
 
 
 use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\Container;
 
 class ControllerA extends BaseController {
-
 	/**
-	 * @var NewInterface
+	 * @var Container
 	 */
-	private $newInterface;
+	private $dic;
 
 	/**
 	 * ControllerA constructor.
 	 * @inheritdoc
 	 */
-	public function __construct(
-		DatabaseConnectionInterface $dbConnection,
-		LoggerInterface $logger,
-		NewInterface $newInterface
-	) {
+	public function __construct(DatabaseConnectionInterface $dbConnection, LoggerInterface $logger, Container $dic) {
 		parent::__construct($dbConnection, $logger);
-		$this->newInterface = $newInterface;
+		$this->dic = $dic;
 	}
 
 	public function index() {

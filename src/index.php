@@ -20,5 +20,9 @@ $dbConnection = $dic->get('db_connection');
 /** @var LoggerInterface $logger */
 $logger = $dic->get('logger');
 
-$a = new ControllerA($dbConnection, $logger);
-$b = new ControllerB($dbConnection);
+
+// Main
+$a = new ControllerA($dbConnection, $logger, $dic);
+$a->index();
+
+//$b = new ControllerB($dbConnection);
