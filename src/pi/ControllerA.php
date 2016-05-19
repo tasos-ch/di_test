@@ -24,7 +24,7 @@ class ControllerA extends BaseController {
 	public function index() {
 		// Do stuff...
 		/** @var ClassC $classC */
-		$classC = $this->dic->get('class_c');
+		$classC = $this->dic->get(ClassC::class);
 		$classC->run();
 	}
 }

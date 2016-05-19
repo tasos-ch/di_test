@@ -9,6 +9,6 @@ services:
     arguments: ['%root_path%/main.log']
   new_interface:
     class: pi\DefaultNew
-  class_c:
+  pi\ClassC:
     class: pi\ClassC
     arguments: ['@new_interface']
