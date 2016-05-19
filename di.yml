@@ -7,3 +7,5 @@ services:
     class: Monolog\Logger
     factory: [pi\LoggerFactory, newMainLogger]
     arguments: ['%root_path%/main.log']
+  new_interface:
+    class: pi\DefaultNew
